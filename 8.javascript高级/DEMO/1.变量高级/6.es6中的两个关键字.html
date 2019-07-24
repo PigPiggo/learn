@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //1.es5，以下两种方法得到的结果一样，会在全局中创建window.a = 1;
+        //方法一
+        if(true){
+            var a = 1;
+        }
+        console.log(a);
+        //方法二
+        var a
+        if(true){
+            a = 1;
+        }
+        console.log(a);
+
+        //2.es6中有块级作用域，无法在全局中创建a，所有打印出来或报错；
+        if(true){
+            let b = 1;
+        }
+        console.log(b);
+        if(true){
+            const b = 1;
+        }
+        console.log(b);
+    </script>
+</body>
+</html>

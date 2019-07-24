@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+    var user = {
+        name:'李寻欢',
+        age:19,
+        sex:'女',
+        department:{
+            departmentNo:7,
+            departmentName:'开发部',
+        },
+    }
+    //浅拷贝
+    //for in
+    var user1 =  {};
+    for(let key in user1){
+        user2[key] = user1[key];
+    }
+    //对象合并方法
+    var user2 = Object.assign({},user1)
+
+    //深拷贝
+    var user3 = JSON.parse(JSON.stringify(user));
+
+
+
+    </script>
+</body>
+</html>

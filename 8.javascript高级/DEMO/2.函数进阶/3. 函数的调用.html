@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //作为方法调用；
+        let user = {
+            name : '李寻欢',
+            age : '32',
+            showName : function () {
+                console.log ('我的名字叫：',this.name);
+            }
+        }
+        user.showName();
+        //作为回调函数
+        let fn = function () { 
+            console.log('哈哈哈');
+        }
+        setTimeout(fn,1000);
+    </script>
+</body>
+</html>

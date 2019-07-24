@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        function Person (name , age) {
+            this.name = name;
+            this.age = age;
+        }
+        // 这个属性prototype的值是一个对象，它上面添加的方法被所有实例对象共享；
+        Person.prototype.show = function () {
+            return '我的名字叫： ' + this.name;
+        }
+        var p1 = new Person ('张三' , 18);
+        var p2 = new Person ('李四' , 22);
+
+        // 显示原型prototype上有一个属性constructor(构造器)指向构造函数本身
+        console.log(Person.prototype.constructor === Person);//true
+
+        // 实例对象上都有一个属性_proto_(隐式原型)指向构造函数的显示原型prototype；
+        console.log(p1._proto_ === Person.protytope);// true
+
+        // 子对象继承的方法全等
+        console.log(p1.show === p2.show);//true
+
+        
+    </script>
+</body>
+</html>

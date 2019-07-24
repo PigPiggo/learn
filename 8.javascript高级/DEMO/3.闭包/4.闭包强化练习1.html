@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+
+    <script>
+        var ul = document.querySelectorAll("ul")[0];
+       /*  for(let i = 0 ; i < 10 ; i++){
+                ul.innerHTML += '<li>' + [i] + '</li>';
+        }
+        var allLi = document.querySelectorAll("li");
+        for (var j = 0 ; j < allLi.length ; j++) {
+            (function (index) {
+                allLi[index].onclick = function () {
+                    alert(index);
+                }
+            })(j)
+        } */
+
+        for(var i = 0 ; i < 10 ; i++) {
+            ul.innerHTML +='<li>' + [i] + '</li>' 
+            let allLi = document.querySelectorAll('li');
+            for (var j = 0 ; j < allLi.length ; j++) {
+                (function (k) {
+                    allLi[k].onclick = function () {
+                        alert(k);
+                    }
+                })(j)
+            }
+        }
+
+    </script>
+</body>
+</html>

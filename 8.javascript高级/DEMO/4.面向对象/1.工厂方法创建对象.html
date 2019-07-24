@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function createUser(name , age , sex) {
+            var user = new Object ();
+            user.name = name;
+            user.age = age;
+            user.sex = sex;
+            user.showName = function () {
+                alert('我的名字是： ' +  this.name)
+            }
+
+            return user;
+        }
+        var user = createUser('王二' , 18 , '男');
+        user.showName();
+    </script>
+</body>
+</html>

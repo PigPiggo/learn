@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">点我</div>
+
+    <script>
+        // 全局中的this => window；
+        console.log(this);
+
+        // 函数中的this => 谁调用指向谁；
+        function show () {
+            console.log(this);
+        }
+        show();
+
+        // 对象方法上的this => 谁调用指向谁；
+        var obj = {
+            name : '张三',
+            showName : function () {
+                console.log (this);
+            }
+        }
+        obj.showName();
+
+        // 事件响应函数的this => 事件源；
+        box.addEventListener ('click',function () {
+            console.log(this);
+        })
+
+        // 构造函数中的this => 指向实例化的对象；
+        function Person(name , age) {
+            this.name = name;
+            this.age = age;
+            console.log(this);
+        }
+        var person = new Person ('张三' , 16)
+
+        // 定时器中的this => window；
+        setTimeout(function () {
+            console.log(this);
+        },100);
+
+        // 箭头函数中的this => 上一级作用域；
+        
+
+    </script>
+</body>
+</html>

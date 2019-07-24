@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // es5构造函数加原型方法就是为了模拟类；
+        //构造函数；
+        function Person (name , age) {
+            this.name = name;
+            this.age = age;
+        }
+        //原型方法（父）
+        Person.prototype.show = function () {
+            console.log('我是父类原型方法秀')
+        }
+
+        //构造函数（子）
+        function Student (name , age , sno) {
+            
+            // 1. 子类继承父类的属性；
+            Person.call(this , name , age)
+            this.sno = sno
+        }
+        
+        // 2.  子类继承父类原型的方法(这一步会覆盖子类的原型)；
+        Student.prototype = Object.create (Person.prototype);
+        
+        console.log (Student.prototype)
+        // 3. 还原子类构造器
+        Student.prototype.constructor = Student;
+
+        var s1 = new Student ('张飞' , 19 , 123123);
+    </script>
+</body>
+</html>

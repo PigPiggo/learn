@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        var user1 = {
+            name : '周瑜',
+            phone : function (name1 , name2) {
+                console.log (this.name + '给' + name1 + '和' + name2 + '打电话');
+            }
+        }
+        var user2 = {
+            name : '曹操' ,
+        }
+        user1.phone();
+
+        // call()方法;
+        user1.phone.call(user2 , '小乔' , '大乔');
+
+        //apply()方法;
+        user1.phone.apply(user2 , ['小乔' , '大乔']);
+
+        var obj = {
+            name : '李寻欢',
+            skill : function () {
+                setTimeout(function () {
+                    console.log (this.name + '飞刀出现')
+                },1000)
+            }
+        }
+        obj.skill()
+        //bind()方法;
+        var obj = {
+            name : '李寻欢',
+            skill : function () {
+                setTimeout(function () {
+                    console.log (this.name + '飞刀出现')
+                }.bind(this),1000)
+            }
+        }
+        obj.skill()
+    </script>
+</body>
+</html>
