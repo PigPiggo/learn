@@ -100,14 +100,15 @@ ajax.send();
 ```
 5. 使用ajax发送post请求
     - 语法
+```
         //创建ajax对象
-        `var ajax = new XMLHttpRequsst()`
+        var ajax = new XMLHttpRequsst()
 
         //使用ajax引擎对象配置请求方式和地址
-        `ajax.open("post","url?参数名1=参数值1&参数名2=参数值2")`
+        ajax.open("post","url")
 
         //监听ajax状态，并在合适的时候接受数据
-        `ajax.onreadystatechange = function(){`
+        ajax.onreadystatechange = function(){
             //ajax.readyState:ajax引擎状态
             //ajax.status:http状态码
             if(ajax.readyState === 4 && ajax.status === 200){
@@ -117,9 +118,10 @@ ajax.send();
         }
 
         //设置请求头（在发送之前）
-        `ajax.setRequestHeader("Contant-Type","application/x-www-form-urlencoded")`
+        ajax.setRequestHeader("Contant-Type","application/x-www-form-urlencoded")
         //发送
-        `ajax.send("参数名1"=参数值1&"参数名2"=参数值2);`
+        ajax.send("参数名1"=参数值1&"参数名2"=参数值2);
+```
 6. 注意事项
     - get和post的区别；
         - get发送的数据量少；post发送的数据量多
@@ -174,4 +176,3 @@ ajax.send();
     - 同步：阻塞
     - 异步：非阻塞
     - 事件是异步的；
-    - 
