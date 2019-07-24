@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        .pobox{width:155px;height: 219px; margin:300px auto;position:relative;}
+        .pobox > img{height:100%;width:100%;position:absolute;
+            transition:transform 0.5s;transform-origin: right top;}
+        .pobox:hover > img:nth-of-type(1){transform:rotate(60deg);}
+        .pobox:hover > img:nth-of-type(2){transform:rotate(120deg);}
+        .pobox:hover > img:nth-of-type(3){transform:rotate(180deg);}
+        .pobox:hover > img:nth-of-type(4){transform:rotate(240deg);}
+        .pobox:hover > img:nth-of-type(5){transform:rotate(300deg);}
+        .pobox:hover > img:nth-of-type(6){transform:rotate(360deg);}
+    </style>
+</head>
+<body>
+    <div class="pobox">
+        <img src="../img/5.html5旋转案例/pk1.png" alt="poker"><img src="../img/5.html5旋转案例/pk2.png" alt="poker">
+        <img src="../img/5.html5旋转案例/pk1.png" alt="poker"><img src="../img/5.html5旋转案例/pk2.png" alt="poker">
+        <img src="../img/5.html5旋转案例/pk1.png" alt="poker"><img src="../img/5.html5旋转案例/pk2.png" alt="poker">
+    </div>
+</body>
+</html>

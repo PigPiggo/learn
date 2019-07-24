@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        .clearfix::after{content:"";display:block;clear:both;}
+        .scrollPic{width:882px;margin:200px auto;overflow:hidden;cursor: pointer;}
+        .scrollPic .imgList{width:200%;animation-name:move;animation-duration:3s;animation-timing-function:linear;animation-iteration-count:infinite;}
+        .scrollPic .imgList:hover{animation-play-state:paused;}
+        .scrollPic .imgList img{float:left;}
+        
+        @keyframes move{
+            0%{transform:translateX(0px);}
+            100%{transform:translateX(-882px);}
+        }
+    </style>
+</head>
+<body>
+    <div class="scrollPic">
+        <div class="imgList clearfix">
+            <img src="../img/7.css动画轮播案例/1.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/2.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/3.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/4.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/5.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/6.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/7.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/1.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/2.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/3.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/4.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/5.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/6.jpg" alt="轮播">
+            <img src="../img/7.css动画轮播案例/7.jpg" alt="轮播">
+        </div>
+        <button>开始</button><button>暂停</button>
+    </div>
+</body>
+</html>

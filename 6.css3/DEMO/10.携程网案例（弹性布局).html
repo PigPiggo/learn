@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        a{text-decoration:none;}
+        header{display:flex;}
+        header > a{flex:1;}
+        header > a > img{width:100%;}
+
+        main{margin:10px;}
+        main > .items{margin:10px 0;border:none;border-radius:10px;height:100px;display:flex;}
+        main > .items:nth-of-type(1){background-color:#57c3ae;}
+        main > .items:nth-of-type(2){background-color:#33aa46;}
+        main > .items:nth-of-type(3){background-color:#aa4b40;}
+        main > .items:nth-of-type(4){background-color:#445faa;}
+        main > .items > .left{flex:1;}
+        main > .items > .right{flex:2;display:flex;flex-flow:wrap;}
+        main > .items > .right > a{box-sizing:border-box;border-left:1px solid #fff;border-bottom:1px solid #fff; width:50%;
+            line-height:50px;text-align:center;color:#fff;}
+        main > .items > .right > a:nth-last-of-type(-n+2){border-bottom:none;}   
+        main > .extra{display:flex;}
+        main > .extra > a{flex:1}
+        main > .extra > a > img{border:none;width:100%;}
+
+        footer > nav{display:flex;font-size:12px;}
+        footer > nav > a{flex:1;border-top:1px solid #888;border-bottom:1px solid #888;
+            text-align:center;line-height:25px;color:#888;}
+        footer > .link{margin:10px;text-align:center;}
+        footer > .copyRight{text-align:center;}
+
+        
+    </style>
+</head>
+<body>
+    <header><a href="#"><img src="../img/10.携程网案例（弹性布局)/banner.jpg" alt="ad"></a></header>
+    <main>
+        <section class="items">
+            <div class="left"></div>
+            <div class="right">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特惠酒店</a>
+                <a href="#">客栈公寓</a>
+            </div>
+        </section>
+        <section class="items">
+            <div class="left"></div>
+            <div class="right">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特惠酒店</a>
+                <a href="#">客栈公寓</a>
+            </div>
+        </section>
+        <section class="items">
+            <div class="left"></div>
+            <div class="right">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特惠酒店</a>
+                <a href="#">客栈公寓</a>
+            </div>
+        </section>
+        <section class="items">
+            <div class="left"></div>
+            <div class="right">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特惠酒店</a>
+                <a href="#">客栈公寓</a>
+            </div>
+        </section>
+        <section class="extra">
+            <a href=""><img src="../img/10.携程网案例（弹性布局)/extra_1.png" alt="ad"></a>
+            <a href=""><img src="../img/10.携程网案例（弹性布局)/extra_2.png" alt="ad"></a>
+        </section>
+    </main>
+    <footer>
+        <nav><a href="#">电话预定</a><a href="#">下载客户端</a><a href="#">我的订单</a></nav>
+        <div class="link"><a href="#">网站地图 </a><a href="#">ENGLISH </a><a href="#">电脑版 </a></div>
+        <p class="copyRight">&copy; 携程旅行</p>
+    </footer>
+</body>
+</html>

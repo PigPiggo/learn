@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        ul{list-style:none;}
+        .bgc{background-color:aqua}
+        .clearfix:after{content:"";display:block;clear:both;}
+        body{position:relative;}
+
+        ul{margin:100px auto;width:560px;height:300px;position:relative;transform:rotate3d(1,1,0,0deg);transform-style:preserve-3d;}
+        ul > li{width:112px;height:300px;float:left;display:flex;position:relative;transform-style:preserve-3d;}
+        
+        
+        ul > li > span{display:block;position:absolute;width:112px;height:300px;}
+        ul > li > .front{transform:translate3d(0,0,150px);background-image:url("../img/11.切割轮播图案例(transform)/q1.jpg");}
+        ul > li > .back{transform:translate3d(0,0,-150px) rotate3d(1,0,0,180deg);background-image:url("../img/11.切割轮播图案例(transform)/q3.jpg");}
+        ul > li > .bottom{transform:translate3d(0,150px,0) rotate3d(1,0,0,-90deg);background-image:url("../img/11.切割轮播图案例(transform)/q4.jpg");}
+        ul > li > .top{transform:translate3d(0,-150px,0) rotate3d(1,0,0,90deg);background-image:url("../img/11.切割轮播图案例(transform)/q2.jpg");}
+
+        button{display:block;position:absolute;top:125px;border:none;width:30px;height:50px;background-color:rgba(0, 0, 0, 0.5);color:#FFF;cursor:pointer;
+            transform:translate3d(0,0,200px);}
+        #prev{left:0;}
+        #next{right:0;}
+
+
+
+    </style>
+    <script>
+        window.onload = function(){
+    //修改背景
+    function addBgc(selec){
+        var ele = document.querySelectorAll(selec);
+        for(i = 1 ; i < ele.length ; i++){
+            ele[i].style.backgroundPosition = - i * 112 + "px";
+        } 
+    }
+    addBgc(".front"); 
+    addBgc(".back"); 
+    addBgc(".top"); 
+    addBgc(".bottom");
+    
+    //动画
+    var allLi = document.getElementsByTagName("li");
+    var flag = true
+    for(i = 0 ; i < allLi.length ; i++){
+        allLi[i].move = function(){
+            var v = 1;
+            var ele = this;
+            
+                timer = setInterval(function(){
+                    ele.style.transform = "rotateX(" + v + "deg)"
+                    v++
+                    if(v > 90){
+                        clearInterval(timer);
+                    }
+                },10)            
+        }
+    }
+
+    allLi[0].move();
+    allLi[1].move();
+    allLi[2].move();
+    allLi[3].move();
+    allLi[4].move();
+
+    //轮播
+
+    
+    //单机响应
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var one = document.getElementById("one");
+    var two = document.getElementById("two");
+    prev.onclick = function(){
+        
+    }
+}
+    </script>
+</head>
+<body>
+    <ul class="clearfix">
+        <li id="one"><span class="front">front</span><span class="bottom">bottom</span><span class="back">back</span><span class="top">top</span></li>
+        <li id="two"><span class="front">front</span><span class="bottom">bottom</span><span class="back">back</span><span class="top">top</span></li>
+        <li id="three"><span class="front">front</span><span class="bottom">bottom</span><span class="back">back</span><span class="top">top</span></li>
+        <li id="four"><span class="front">front</span><span class="bottom">bottom</span><span class="back">back</span><span class="top">top</span></li>
+        <li id="five"><span class="front">front</span><span class="bottom">bottom</span><span class="back">back</span><span class="top">top</span></li>
+        <button id="prev">&lAarr;</button><button id="next">&rAarr;</button>
+    </ul>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        .first{position:relative}
+        .first .logo{width:251px;height:186px;position:absolute;top:80px;left:50%;margin-left:-125.5px}
+        .first .text{margin-top:40px;position:absolute;}
+        .first .intro{position:absolute;top:600px}
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section first">
+            <div class="logo">
+                <img src="../img/12.全屏网页案例（360）/logo.png" alt="logo">
+            </div>
+            <div class="text">
+                <img src="../img/12.全屏网页案例（360）/text_1.png" alt="text">
+                <img src="../img/12.全屏网页案例（360）/text_2.png" alt="text">
+                <img src="../img/12.全屏网页案例（360）/text_3.png" alt="text">
+                <img src="../img/12.全屏网页案例（360）/text_4.png" alt="text">
+                <img src="../img/12.全屏网页案例（360）/text_5.png" alt="text">
+                <img src="../img/12.全屏网页案例（360）/text_6.png" alt="text">
+                <img src="../img/12.全屏网页案例（360）/text_7.png" alt="text">
+                <img src="../img/12.全屏网页案例（360）/text_8.png" alt="text">
+            </div>
+            <div class="intro">
+                <img src="../img/12.全屏网页案例（360）/info_1.png" alt="intro">
+            </div>
+        </div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+    </div>
+
+
+    <script src="../js/src/jquery.min.js"></script>
+    <script src="../js/src/fullpage.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#fullpage").fullpage({
+                sectionsColor:["rgb(13, 165, 214)","rgb(42, 181, 97)","rgb(222, 137, 16)","rgb(22, 186, 157)","rgb(13, 165, 214)"]
+            })
+
+
+        })
+    </script>
+</body>
+</html>

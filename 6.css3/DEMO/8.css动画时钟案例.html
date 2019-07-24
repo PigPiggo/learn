@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        .clock{margin:200px auto;border:10px solid #ccc;border-radius:50%;width:400px;height:400px;position:relative;}
+        .clock .face{border:none;border-radius:50%;width:400px;height:400px;position:relative;}
+        .clock .face .line{width:10px;height:400px;background-color:#ccc;margin:auto;
+            position:absolute;left:50%;top:50%}
+        .clock .face .line:nth-of-type(1){transform:translate(-50%,-50%) rotate(30deg);}
+        .clock .face .line:nth-of-type(2){transform:translate(-50%,-50%) rotate(60deg);}
+        .clock .face .line:nth-of-type(3){transform:translate(-50%,-50%) rotate(90deg);}
+        .clock .face .line:nth-of-type(4){transform:translate(-50%,-50%) rotate(120deg);}
+        .clock .face .line:nth-of-type(5){transform:translate(-50%,-50%) rotate(150deg);}
+        .clock .face .line:nth-of-type(6){transform:translate(-50%,-50%) rotate(180deg);}
+        .clock .cover{border:none;border-radius:50%;width:365px;height:365px;background-color:#fff;
+            position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
+        .clock .cover .hour{height:130px;width:10px;background-color:red;
+            left:50%;top:50%;position:absolute;transform:translate(-50%,-100%);transform-origin:bottom center;
+            animation-name:move;
+            animation-duration:216000s;
+            animation-timing-function:linear;
+            }
+        .clock .cover .min{height:150px;width:5px;background-color:green;
+            left:50%;top:50%;position:absolute;transform:translate(-50%,-100%);transform-origin:bottom center;
+            animation-name:move;
+            animation-duration:3600s;
+            animation-timing-function:linear;
+            }
+        .clock .cover .sec{height:170px;width:2px;background-color:blue;
+            left:50%;top:50%;position:absolute;transform:translate(-50%,-100%);transform-origin:bottom center;
+            animation:move 60s steps(60);
+        }
+        .clock .cover .origin{border:none;border-radius:50%;height:30px;width:30px;background-color:#ccc;
+            left:50%;top:50%;position:absolute;transform:translate(-50%,-50%);}
+
+        @keyframes move{
+            0%{transform:translate(-50%,-100%) rotate(0deg);}
+            100%{transform:translate(-50%,-100%) rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="face">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="cover">
+            <div class="hour"></div>
+            <div class="min"></div>
+            <div class="sec"></div>
+            <div class="origin"></div>
+        </div>
+    </div>
+</body>
+</html>
