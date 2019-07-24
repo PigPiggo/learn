@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        div{float:left;margin:0 5px;border:1px solid black;width:150px;height:150px;}
+        div p{background-color:orange;}
+    </style>
+</head>
+<body>
+    <div id="start">
+        <p id="pe1" draggable="true">把我拖过去1</p>
+        <p id="pe2" draggable="true">把我拖过去2</p>
+    </div>
+    <div id="target1">1</div>
+    <div id="target2">2</div>
+</body>
+<script>
+    //获取拖拽元素
+    //添加拖拽事件
+    //获取目标元素
+    //添加拖拽事件
+    var p = document.querySelector("#pe")
+    var target1 = document.querySelector("#target1")
+    var target2 = document.querySelector("#target2")
+    
+    document.ondragstart = function(e){
+        e.dataTransfer.setData("text/html",e.target.id)
+    }
+    document.ondragover = function(e){
+        e.preventDefault();
+    }
+    document.ondrop = function(e){
+        e.target.appendChild(document.querySelector("#"+e.dataTransfer.getData("text/html")));
+    }
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/css.css">
+    <script src="../js/js.js"></script>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>学生档案</legend><br />
+            <label for="studentName">姓名：</label><br />
+            <input type="text" id="studentName" placeholder="请输入姓名" /><br />
+            <label for="phoneNumber">手机号码:</label><br />
+            <input type="tel" id="phoneNumber" pattern="^1\d{10}$" /><br />
+            <label for="mail">邮箱地址:</label><br />
+            <input type="mail" id="mail" /><br />
+            <label for="collage">所属院校:</label><br />
+            <input type="text" id="collage" name="collage" list="clist" placeholder="请选择" /><br />
+            <datalist id="clist">
+                <option value="前端技术与移动开发学院"></option>
+                <option value="java学院"></option>
+                <option value="c++学院"></option>
+            </datalist>
+            <label for="score">入学成绩:</label><br />
+            <input type="number" id="score" /><br />
+            <label for="level">基础水平:</label>
+            <meter max="100" min="0" high="90" low="60" id="level"></meter>
+            <label for="inTime">入学日期:</label>
+            <input type="date" id="inTime" />
+            <label for="outTime">毕业日期:</label>
+            <input type="date" id="outTime" />
+            <input type="submit" />
+        </fieldset>
+    </form>
+</body>
+</html>

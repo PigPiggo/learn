@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" /><br /><br /><br />
+    <img src="" alt="">
+    <input type="submit" />
+
+    <script>
+        document.querySelectorAll("input")[0].onchange = function(){
+            var file = document.querySelectorAll("input")[0].files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function(){
+                document.querySelector("img").src = reader.result;
+            }
+        }
+    </script>
+</body>
+</html>

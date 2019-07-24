@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="../images/l1.jpg" alt="图片">
+        <input type="button" value="全屏" id="Full">
+        <input type="button" value="关闭全屏" id="notFull">
+        <input type="button" value="是否全屏" id="isFull">
+    </div>
+
+    <script>
+        var div = document.querySelector("div")
+        document.querySelector("#Full").onclick = function(){
+            div.requestFullScreen && div.requestFullScreen()
+            div.webkitRequestFullScreen && div.webkitRequestFullScreen() 
+            div.mozRequestFullScreen && div.mozRequestFullScreen() 
+            div.msRequestFullscreen && div.msRequestFullscreen();
+        }
+        
+        document.querySelector("#notFull").onclick = function(){
+            document.cancelFullScreen && document.CancelFullScreen()
+            document.webkitCancelFullScreen && document.webkitCancelFullScreen() 
+            document.mozCancelFullScreen && document.mozCancelFullScreen() 
+            document.msCancelFullscreen && document.msCancelFullscreen();
+        }
+        document.querySelector("#isFull").onclick = function(){
+            if(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement){
+                alert("全屏");
+            } else{
+                alert("没有全屏");
+            }
+            
+        }
+    </script>
+</body>
+</html>
