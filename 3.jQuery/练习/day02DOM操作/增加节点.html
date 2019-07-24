@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>增加节点案例</title>
+</head>
+<body>
+    <div id="parent">
+        <p>第1个对象</p>
+        <p>第2个对象</p>
+        <p>第3个对象</p>
+        <p>第4个对象</p>
+        <p>第5个对象</p>
+    </div>
+    <script src="../jquery-1.11.3/jquery.min.js"></script>
+    <script>
+        //需求：增加不存在的节点；
+        //1.创建节点(工厂函数方法)
+        let pele = $("<p class='aaa'>这是新节点</p>")
+        let span = $("<span>123123123</span>")
+        console.log(pele);
+        
+        /* 
+        父对象.apend(子对象)
+        子对象.appendTo(父对象/父对象的选择器)；
+        父对象.prepend(子对象)
+        子对象.prependTo(父对象/父对象的选择器)；
+        */
+        
+        $("#parent").append(pele);//在parent中添加pele；
+        span.appendTo("#parent");
+
+        $("#parent").prepend(pele);
+        pele.prependTo("#parent");
+
+        //需求，增加已经存在的节点；
+        
+
+
+
+        
+    </script>
+</body>
+</html>

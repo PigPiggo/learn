@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>each遍历</title>
+    <style>
+        .ff0{
+            background-color:#ff0;
+        }
+    </style>
+</head>
+<body>
+    <button class="addBg">点我变色</button><span id="intro"></span>
+    <div>aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+    <div>ddd</div>
+    <div id="stop">stop here</div>
+    <div>eee</div>
+    <div>fff</div>
+
+    <div class="cal">
+        <button class="sum">计算总价</button>
+        <div>99.99</div>
+        <div>12.33</div>
+        <div>78.5</div>
+        <div>39.1</div>
+        <div>42.41</div>
+        <div>55.55</div>
+        <div>90.86</div>
+        <div>总价是：<span></span></div>
+    </div>
+
+
+    <script src="../jquery-1.11.3/jquery.min.js"></script>
+    <script>
+        //数组遍历
+        arr = ["张三","李四","王五","马六"];
+        $.each(arr,function(index,dom){
+            console.log(index,dom);
+        });
+
+        $(arr).each(function(index,dom){
+            console.log(index,dom);
+        })
+        
+        //对象的遍历
+        //需求：将div中的内容作为类名添加到每个div中；
+        $("div").each(function(index){
+            let text = $(this).text();
+            $(this).addClass(text);
+        })
+
+        //需求：点击按钮，将id为stop及他上面的div背景色设为黄色；
+        $(".addBg").click(function(){
+            $("div").each(function(index){
+                $(this).addClass("ff0");
+                if($(this).is("#stop")){
+                    $("#intro").text("在第" + (index+1) + "个处停止");
+                    return false;
+                }
+            })
+        })
+        
+        //需求：计算总价
+        let plus = 0;
+            $(".cal div:not(':last')").each(function(index){
+                    plus = plus + parseFloat($(this).text());
+            })
+            
+            plus = plus.toFixed(2);
+            console.log(typeof plus);
+            $(".sum").click(function(){
+                $(".cal div span").text(plus + "元");
+            });
+        
+            
+
+    </script>
+</body>
+</html>

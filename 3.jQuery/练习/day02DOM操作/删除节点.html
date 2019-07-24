@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #box{
+            border:2px solid red;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <p>第1个节点</p>
+        <p id="two">第2个节点</p>
+        <p id="three">第3个节点</p>
+        <p>第4个节点</p>
+        <p id="five">第5个节点</p>
+
+        <p>1</p>
+        <p class="a">2</p>
+        <p>3</p>
+        <p class="a">4</p>
+        <p>5</p>
+        <p class="b">6</p>
+        <p id="c">7</p>
+        <p>8</p>
+    </div>
+    <div id="box"></div>
+    <script src="../jquery-1.11.3/jquery.js"></script>
+    <script>
+        //需求，删除id为two的元素；并将删除后的元素追加到box中
+        let two = $("#two").remove();
+        console.log(two);
+        two.appendTo("#box");
+
+        //需求，删除id为three的元素；并将删除后的元素追加到box中
+        $("#three").click(function(){
+            alert("123");
+        })
+        let three = $("#three").detach();
+        three.appendTo("#box");
+
+        //需求：清空#five中的子节点；
+        $("#five").empty();
+
+        //需求：删除类名为a的元素；
+        $("p").detach(".a,.b,#c"); 
+        
+    </script>
+</body>
+</html>

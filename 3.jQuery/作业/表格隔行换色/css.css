@@ -1,0 +1,32 @@
+table{
+    border-collapse:collapse;
+}
+
+td{
+    text-align:center;
+    border-left:2px solid white;
+}
+td:nth-child(1){
+    width:198px;
+} 
+td:nth-child(2){
+    width:277px;
+}
+td:nth-child(3){
+    width:124px;
+}
+td:nth-child(4){
+    width:122px;
+}
+
+.bgADD8D5{
+    background-color:#ADD8D5;
+}
+
+.bgFF0{
+    background-color:#FF0;
+}
+
+.bgCCC{
+    background-color:#ccc;
+}

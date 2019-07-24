@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        dl{
+            width:100px;
+            line-height: 30px;
+            text-align: center;
+            margin:0 auto;
+        }
+        dl dt{
+            background:#2e98f0;
+            color:#fff;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+    
+        dl dd{
+            background:#9c876a;
+            color:#fff;
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+    <dl>
+        <dt>标题1</dt>
+        <dd>内容</dd>
+        <dd>内容</dd>
+        <dd>内容</dd>
+        <dd>内容</dd>
+    
+        <dt>标题2</dt>
+        <dd>内容</dd>
+        <dd>内容</dd>
+        <dd>内容</dd>
+        <dd>内容</dd>
+    
+        <dt>标题3</dt>
+        <dd>内容</dd>
+        <dd>内容</dd>
+        <dd>内容</dd>
+        <dd>内容</dd>
+    
+        <dt>标题4</dt>
+        <dd>内容</dd>
+        <dd>内容</dd>
+        <dd>内容</dd>
+        <dd>内容</dd>
+    </dl>
+    <script src="../jquery-1.11.3/jquery.min.js"></script>
+    <script>
+        $("dt").click(function(){
+            $(this).nextUntil("dt").toggle(300);
+        })
+    </script>
+</body>
+</html>

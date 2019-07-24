@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background-color:#f00;
+            margin:5px;
+        }
+        .blue{
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <button>点我加方块</button>
+
+    <script src="../jquery-1.11.3/jquery.min.js"></script>
+    <script>
+        $("button").click(function(){
+            $("<div class='box'></div>").appendTo("body");
+        })
+        $("body").on("mouseover mouseout","div",function(){
+            $(this).toggleClass("blue");
+        })
+    </script>
+</body>
+</html>

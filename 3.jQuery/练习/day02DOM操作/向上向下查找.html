@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <p>这是第1行</p>
+                <a href="#">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>这是第2行</p>
+                <a href="#">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>这是第3行</p>
+                <a href="#">删除</a>
+            </td>
+        </tr>
+    </table>
+    <script src="../jquery-1.11.3/jquery.min.js"></script>
+    <script>
+        //需求：点击a标签删除当前表格中的行；
+        /* $("a").click(function(){
+            $(this).closest("tr").remove();
+        }) */
+        //需求：点击tr改变当前行中a标签的颜色；
+        $("tr").click(function(){
+            $(this).find("a").css("color","red");
+        })
+    </script>
+</body>
+</html>

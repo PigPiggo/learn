@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="../jquery.min.js"></script>
+<body>
+    <input type="text" id="username">
+
+
+
+
+    <script>
+                var username = document.getElementById("username");
+                username.onblur = function(){
+                    
+                    //get
+                    /*var ajax = new XMLHttpRequest();
+                    ajax.open("get","./server/data.json?"+"username="+username.value);
+                    ajax.onreadystatechange = function(){
+                        if(ajax.readyState === 4 && ajax.status === 200){
+                            var data = ajax.responseText;
+                            console.log(data);
+                        }
+                    }
+                    ajax.send(); */
+                    
+                    //post
+                    /* var xhr = new XMLHttpRequest();
+                    xhr.open("post","./server/data.json");
+                    xhr.onreadystatechange = function(){
+                        if(xhr.readyState === 4 && xhr.status === 200){
+                            var data = JSON.parse(xhr.responseText);
+                            console.log(data);
+                        }
+                    }
+                    xhr.setRequestHeader("Content-Type","application/x-www-form-urlcoded")
+                    xhr.send(`username=${username.value}`); */
+
+                    //jquery
+                    /* $.get("./server/data.json?"+"username="+username.value,function(data){
+                        console.log(data);
+                    }) */
+                    
+                    /* $.post("./server/data.json",{username:username.value },function(data){
+
+                    }) */
+                   
+                    $.ajax({
+                        url:"",
+                        type:get/post,
+                        dataType:"json",
+                        success:function(data){
+                            
+                        }
+                    })
+                }
+
+                //xhr.setRequsetHeader("Content-Type","application/x-www-form-urlcoded")
+                /*
+                区别：
+                get传输的数据量更大；
+                post比get更安全；
+                传参数方式不同；
+                post需要在发送请求前设置请求头；
+                  */
+
+                
+
+
+
+            
+
+    </script>
+</body>
+</html>

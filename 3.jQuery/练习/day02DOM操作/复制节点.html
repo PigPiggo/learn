@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            height:200px;
+            border:2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <p>第1个节点</p>
+        <p>第2个节点</p>
+        <p id="three">第3个节点</p>
+        <p>第4个节点</p>
+        <p id="five">第5个节点</p>
+    </div>
+
+    <div id="box"></div>
+    <script src="../jquery-1.11.3/jquery.min.js"></script>
+    <script>
+        //需求：复制id为three的节点，并将复制后的节点添加到box；
+        $("#three").click(function(){
+            alert("123");
+        })
+
+        $("#three").clone().appendTo("#box");//链式写法；不复制行为
+        $("#three").clone(true).appendTo("#box");//链式写法；复制行为
+    </script>
+</body>
+</html>

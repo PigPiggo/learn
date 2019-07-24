@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .f00{
+            width:100px;
+            height:100px;
+            background-color:#f00;
+        }
+        .bfc{
+            width:100px;
+            height:100px;
+            background-color:#bfc;
+        }
+        .ff0{
+            width:100px;
+            height:100px;
+            background-color:#ff0;
+        }
+        .togClass{
+            width:100px;
+            height:100px;
+            background-color:#ccc
+        }
+        .blue{
+            background-color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="f00">一个事件绑定一个函数</div>
+    <div class="bfc">一个事件绑定多个函数</div>
+    <div class="ff0">简写</div>
+    <div class="ff0">多个事件绑定同一个函数</div>
+    <div class="togClass">多个事件绑定同一个函数</div>
+    <div class="togClass">多个事件绑定同一个函数</div>
+    <script src="../jquery-1.11.3/jquery.min.js"></script>
+    <script>
+        //一个事件绑定一个函数
+        $(".f00").bind("click",function(){
+            alert("1");
+        })
+        //一个事件绑定多个函数
+        $(".bfc").bind("click",function(){
+            alert("1");
+        }).bind("click",function(){
+            alert("2");
+        })
+        //简写
+        $(".ff0:first").click(function(){
+            alert("1");
+        }).click(function(){
+            alert("2");
+        })
+        //多个事件绑定同一个函数
+        $(".ff0:last").bind("mouseover mouseout",function(){
+            $(this).toggleClass("blue");
+        })
+        //多个事件绑定同一个函数 简写
+        function togClass(){
+            $(this).toggleClass("blue");
+        }
+        $(".togClass:first").mouseover(togClass).mouseout(togClass);
+        //多个事件绑定不同处理函数 简写
+        $(".togClass:last").bind({
+            "click":function(){alert("1")},
+            "mouseover":togClass,
+            "mouseout":togClass
+        })
+
+    </script>
+</body>
+</html>
