@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function fn () {
+            switch (arguments.length) {
+                case 1:
+                    return arguments[0];
+                    break;
+                case 2:
+                    return arguments[0] + arguments[1];
+                    break;
+                case 3:
+                    return arguments[0] * arguments[1] * arguments[2];
+                    break;
+                default:
+                    return console.log('参数错误')
+
+            }
+
+        }
+
+        console.log(fn(10));
+        console.log(fn(1,2));
+        console.log(fn(1,2,3));
+        console.log(fn(1,2,3,4));
+    </script>
+</body>
+</html>

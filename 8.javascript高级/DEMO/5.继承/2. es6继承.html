@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        // 父类；
+        class Person {
+            // 父类的构造函数
+            constructor (name , age) {
+                this.name = name;
+                this.age = age;
+            }
+            show () {
+                console.log('这是父类的方法秀')
+            }
+
+        }
+        
+        var s2 = new Person ('貂蝉' , 16)
+        // 子类继承父类；
+        class Student extends Person {
+            // 构造函数
+            constructor (name , age , sno) {
+                // 继承父类属性；
+                super (name , age);
+                // 自己的属性；
+                this.sno = sno;
+            }
+            say () {
+                console.log ('这是子类的方法say')
+            }
+        }
+
+        let s1 = new Student ('张飞' , 16 , '008');
+        console.log (s1 instanceof Student);
+        console.log (s1 instanceof Person);
+        console.log (s1 instanceof Object);
+        s1.show ();
+        s1.say ();
+    </script>
+</body>
+</html>
